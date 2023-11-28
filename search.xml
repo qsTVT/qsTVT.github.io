@@ -8,9 +8,21 @@
       <link href="/2023/11/28/%E5%88%9D%E7%AF%87/"/>
       <url>/2023/11/28/%E5%88%9D%E7%AF%87/</url>
       
-        <content type="html"><![CDATA[<p>测试，测试ing</p>]]></content>
+        <content type="html"><![CDATA[<p>测试，测试ing<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>typedef long long ll;<br>const int N&#x3D;205;<br>ll n,m,a[N][N];<br>ll dx[8]&#x3D;{0,-1,0,1,0},dy[8]&#x3D;{0,0,1,0,-1};<br>void dfs(ll x,ll y){<br>    if(x&lt;0||y&lt;0||x&gt;n+1||y&gt;n+1||a[x][y]&#x3D;&#x3D;1||a[x][y]&#x3D;&#x3D;2) return;<br>    a[x][y]&#x3D;2;<br>    for(int i&#x3D;1;i&lt;&#x3D;4;i++) dfs(x+dx[i],y+dy[i]);<br>}<br>int main(){<br>    scanf(“%lld”,&amp;n);<br>    for(int i&#x3D;1;i&lt;&#x3D;n;i++)<br>        for(int j&#x3D;1;j&lt;&#x3D;n;j++)<br>            scanf(“%lld”,&amp;a[i][j]);<br>    dfs(0,0);<br>    for(int i&#x3D;1;i&lt;&#x3D;n;i++){<br>        for(int j&#x3D;1;j&lt;&#x3D;n;j++){<br>            if(a[i][j]&#x3D;&#x3D;2) printf(“0 “);<br>            if(a[i][j]&#x3D;&#x3D;1) printf(“1 “);<br>            if(a[i][j]&#x3D;&#x3D;0) printf(“2 “);<br>        }<br>        printf(“\n”);<br>    }<br>}</p>]]></content>
       
       
+      <categories>
+          
+          <category> 洛谷 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 题解 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -31,28 +43,6 @@
     
     
     <entry>
-      <title>视频</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>标签</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
@@ -64,9 +54,9 @@
     
     
     <entry>
-      <title>友联</title>
-      <link href="/friend/index.html"/>
-      <url>/friend/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
