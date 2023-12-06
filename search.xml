@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>hexo博客</title>
+      <title>hexo博客基础搭建</title>
       <link href="/2023/11/30/hexo/"/>
       <url>/2023/11/30/hexo/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-配置前准备"><a href="#1-配置前准备" class="headerlink" title="1.配置前准备"></a>1.配置前准备</h1><p>需求：</p><ul><li>Windows 10 及以上配置</li><li>markdown编辑器（推荐VScode）</li><li>github个人账号及git安装</li><li>HEXO</li></ul><h1 id="2-安装HEXO"><a href="#2-安装HEXO" class="headerlink" title="2.安装HEXO"></a>2.安装HEXO</h1><p>在gitbush中输入下面的命令<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>完成后输出hexo -v验证是否安装成功</p><h1 id="3-在github中创建新的仓库"><a href="#3-在github中创建新的仓库" class="headerlink" title="3.在github中创建新的仓库"></a>3.在github中创建新的仓库</h1><ul><li>打开github时最好科学上网或者开加速器，不然可能会进不去<ul><li>仓库的格式必须为：&lt;用户名&gt;.github.io</li><li>点击 Creat repository 进行创建</li></ul></li></ul><h1 id="4-git的配置"><a href="#4-git的配置" class="headerlink" title="4.git的配置"></a>4.git的配置</h1><p>配置用户名和邮箱，依次输入以下命令<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure></p><h1 id="5-连接至github"><a href="#5-连接至github" class="headerlink" title="5.连接至github"></a>5.连接至github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure><br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub<br>用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将key配置到github<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。</p><h1 id="6-初始化HEXO"><a href="#6-初始化HEXO" class="headerlink" title="6.初始化HEXO"></a>6.初始化HEXO</h1><p>1.新建文件夹（路径必须全英文），在此文件夹里打开gitbush并输入以下命令<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">hexo init <span class="title">blog</span><span class="params">(项目名，自己随便写一个)</span></span></span><br></pre></td></tr></table></figure><br>2.进入blog ，输入 <code>npm i</code> 安装相关依赖。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog-demo  <span class="comment">//进入blog文件夹</span></span><br><span class="line">npm i</span><br></pre></td></tr></table></figure><br>3.之后blog文件夹里就会有相关文件了<br>4.输入<code>hexo s</code>启动项目<br>5.项目对下面的<code>http://localhost:4000/</code>是项目地址，在浏览器中打开即可</p><h1 id="6将本地博客部署到github上"><a href="#6将本地博客部署到github上" class="headerlink" title="6将本地博客部署到github上"></a>6将本地博客部署到github上</h1><p>1.安装 hexo-deployer-git<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>]]></content>
+        <content type="html"><![CDATA[<p>文章参考自<a href="https://www.fomal.cc/">Fomalhaut</a>，进行了一些精简。</p><h1 id="1-配置前准备"><a href="#1-配置前准备" class="headerlink" title="1.配置前准备"></a>1.配置前准备</h1><p>需求：</p><ul><li>Windows 10 及以上配置</li><li>markdown编辑器（推荐VScode）</li><li>github个人账号及git安装</li><li>HEXO</li></ul><h1 id="2-安装HEXO"><a href="#2-安装HEXO" class="headerlink" title="2.安装HEXO"></a>2.安装HEXO</h1><p>在gitbush中输入下面的命令<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>完成后输出hexo -v验证是否安装成功</p><h1 id="3-在github中创建新的仓库"><a href="#3-在github中创建新的仓库" class="headerlink" title="3.在github中创建新的仓库"></a>3.在github中创建新的仓库</h1><ul><li>打开github时最好科学上网或者开加速器，不然可能会进不去<ul><li>仓库的格式必须为：&lt;用户名&gt;.github.io</li><li>点击 Creat repository 进行创建</li></ul></li></ul><h1 id="4-git的配置"><a href="#4-git的配置" class="headerlink" title="4.git的配置"></a>4.git的配置</h1><p>配置用户名和邮箱，依次输入以下命令<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure></p><h1 id="5-连接至github"><a href="#5-连接至github" class="headerlink" title="5.连接至github"></a>5.连接至github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure><br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub<br>用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将key配置到github<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。</p><h1 id="6-初始化HEXO"><a href="#6-初始化HEXO" class="headerlink" title="6.初始化HEXO"></a>6.初始化HEXO</h1><p>1.新建文件夹（路径必须全英文），在此文件夹里打开gitbush并输入以下命令<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">hexo init <span class="title">blog</span><span class="params">(项目名，自己随便写一个)</span></span></span><br></pre></td></tr></table></figure><br>2.进入blog ，输入 <code>npm i</code> 安装相关依赖。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog-demo  <span class="comment">//进入blog文件夹</span></span><br><span class="line">npm i</span><br></pre></td></tr></table></figure><br>3.之后blog文件夹里就会有相关文件了<br>4.输入<code>hexo s</code>启动项目<br>5.项目对下面的<code>http://localhost:4000/</code>是项目地址，在浏览器中打开即可</p><h1 id="6将本地博客部署到github上"><a href="#6将本地博客部署到github上" class="headerlink" title="6将本地博客部署到github上"></a>6将本地博客部署到github上</h1><p>1.安装 hexo-deployer-git<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><br>2.修改_config.yml中的配置<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:qsTVT/qsTVT.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><br>记得把repository后面改成自己的github的ssh链接<br>3.运行以下命令<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure><br>这样之后，就可以通过github自带的网址，访问自己的博客了。</p>]]></content>
       
       
       <categories>
@@ -79,31 +79,6 @@
     
     
     <entry>
-      <title>JAVA学习</title>
-      <link href="/2023/11/28/java%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2023/11/28/java%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<p>java正在学习中ing</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>初篇</title>
       <link href="/2023/11/28/%E5%88%9D%E7%AF%87/"/>
       <url>/2023/11/28/%E5%88%9D%E7%AF%87/</url>
@@ -127,6 +102,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>JAVA学习</title>
+      <link href="/2023/11/28/java%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2023/11/28/java%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<p>java正在学习中ing</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
     
@@ -143,11 +143,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title></title>
+      <link href="/css/universe.css"/>
+      <url>/css/universe.css</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[/* 背景宇宙星光  */#universe{    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;  }  ]]></content>
       
     </entry>
     
@@ -165,11 +165,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/universe.css"/>
-      <url>/css/universe.css</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[/* 背景宇宙星光  */#universe{    display: block;    position: fixed;    margin: 0;    padding: 0;    border: 0;    outline: 0;    left: 0;    top: 0;    width: 100%;    height: 100%;    pointer-events: none;    /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */    z-index: -1;  }  ]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -198,22 +198,22 @@
     
     
     <entry>
-      <title></title>
-      <link href="/js/runtime.js"/>
-      <url>/js/runtime.js</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[var now=new Date;function createtime(){now.setTime(now.getTime()+1e3);var e=new Date("11/11/2023 00:00:00"),t=Math.trunc(234e8+(now-e)/1e3*17),a=(t/1496e5).toFixed(6),o=new Date("11/11/2023 00:00:00"),n=(now-o)/1e3/60/60/24,r=Math.floor(n),i=(now-o)/1e3/60/60-24*r,s=Math.floor(i);1==String(s).length&&(s="0"+s);var d=(now-o)/1e3/60-1440*r-60*s,l=Math.floor(d);1==String(l).length&&(l="0"+l);var g=(now-o)/1e3-86400*r-3600*s-60*l,b=Math.round(g);1==String(b).length&&(b="0"+b);let c="";c=s<18&&s>=9?`<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`:`<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`,document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=c)}setInterval((()=>{createtime()}),1e3);]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title></title>
+      <link href="/js/runtime.js"/>
+      <url>/js/runtime.js</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[var now=new Date;function createtime(){now.setTime(now.getTime()+1e3);var e=new Date("11/11/2023 00:00:00"),t=Math.trunc(234e8+(now-e)/1e3*17),a=(t/1496e5).toFixed(6),o=new Date("11/11/2023 00:00:00"),n=(now-o)/1e3/60/60/24,r=Math.floor(n),i=(now-o)/1e3/60/60-24*r,s=Math.floor(i);1==String(s).length&&(s="0"+s);var d=(now-o)/1e3/60-1440*r-60*s,l=Math.floor(d);1==String(l).length&&(l="0"+l);var g=(now-o)/1e3-86400*r-3600*s-60*l,b=Math.round(g);1==String(b).length&&(b="0"+b);let c="";c=s<18&&s>=9?`<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`:`<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`,document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=c)}setInterval((()=>{createtime()}),1e3);]]></content>
       
     </entry>
     
